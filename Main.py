@@ -11,13 +11,43 @@ class DoublyCircularLinkedList:
         self.count = 0
 
     def add_at_tail(self, data) -> bool:
-        # Write code here
+        new =Node(data)
+        if self.count==0:
+            self.tail=new
+            self.head=new
+        else:
+            self.tail.next=new
+            new.previous=self.tail
+            self.tail=new
+       self.count+=1
+       return True
+        
 
     def add_at_head(self, data) -> bool:
-        # Write code here
+        new=Node(data)
+        if self.count==0:
+            self.tail=new
+            self.head=new
+        else:
+            new.next=self.head
+            self.head.previous=new
+            sel.head=new
+        self.count+=1
+        return True
+    
 
     def add_at_index(self, index, data) -> bool:
         # Write code here
+        if not 0<=index<+(self.count-1)
+            return False
+        if index==0:
+            return self.add_at_head(data)
+        elif index ==self.count -1:
+            return drlf.add_at_tail(data)
+        curr_node = self.head
+        for ind in range(index+1):
+            curr_node=self.head.next
+        
 
     def get(self, index) -> int:
         # Write code here
