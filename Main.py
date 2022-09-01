@@ -85,6 +85,8 @@ class DoublyCircularLinkedList:
         curr_node = self.head
         for ind in range(index):
             curr_node = curr_node.next
+            curr_node.previous.next = curr_node.next
+        curr_node.next.previous = curr_node.previous
         
         self.count -= 1
         return True
